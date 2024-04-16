@@ -8,16 +8,18 @@ import {
   increment,
   incrementByAmount,
 } from "../../../Centralise-Store/src/feature/Counter"
-
+import {store} from "../../../Centralise-Store/src/store/store";
 export const Counter = () => {
   const dispatch = useDispatch()
   const count = useSelector((state:any)=>state.count?.value);
   const [incrementAmount, setIncrementAmount] = useState("2")
-console.log(count,"count")
+
   const incrementValue = Number(incrementAmount) || 0
 
+  console.log(store.getstate(),"help")
   return (
     <div>
+      <h3>React App 1 </h3>
       <div className={styles.row}>
         <button
           className={styles.button}
